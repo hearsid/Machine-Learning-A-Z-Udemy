@@ -8,7 +8,7 @@ import pandas as pd
 # ---------------------
 dataset = pd.read_csv('../data_files/Data.csv')
 X = dataset.iloc[:, :-1].values
-y = dataset.iloc[:, 3].values
+y = dataset.iloc[:, 3].values 
 
 # Taking care of missing data
 # ---------------------------
@@ -29,7 +29,7 @@ y = labelencoder_y.fit_transform(y)
 
 # Splitting the dataset into the Training set and Test set
 # --------------------------------------------------------
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
 # Feature scaling
